@@ -27,6 +27,6 @@ The dataset can only be used for the purpose of this assignment. Sharing or dist
 | BD2             | Attribute 7     |   Blood Work Result-4 (mu U/ml)|
 | Age              | Attribute 8      |    patients age  (years)|
 | Insurance | N/A     | If a patient holds a valid insurance card|
-| Sepssis                 | Target           | Positive: if a patient in ICU will develop a sepsis , and Negative: otherwise |
+| Sepsis                 | Target           | Positive: if a patient in ICU will develop a sepsis , and Negative: otherwise |
 
 ### Missing Attribute Values: Yes
