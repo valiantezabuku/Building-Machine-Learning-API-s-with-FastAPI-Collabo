@@ -1,0 +1,21 @@
+# Exclude files not needed for Docker build
+*__pycache__/
+*.pyc
+*.pyo
+
+# Exclude log files but keep the logs directory
+logs/*
+!logs/.gitkeep
+
+# Exclude notebook checkpoints
+*.ipynb_checkpoints/
+
+# Environments
+.env
+*.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

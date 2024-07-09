@@ -1,0 +1,36 @@
+services:
+  cache:
+    image: redis:7.2.3-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      app-tier:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn src.api.api:app --host 0.0.0.0 --port 9000 --reload
+    volumes:
+      - ./src:/src
+    ports:
+      - "9000:9000"
+    env_file:
+      - path: ./src/api/.env
+        required: false
+      - path: ./.env
+        required: false
+    depends_on:
+      - cache
+    networks:
+      app-tier:
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  redis_data: {}
