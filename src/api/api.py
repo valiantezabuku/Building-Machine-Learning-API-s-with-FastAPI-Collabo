@@ -79,7 +79,7 @@ class PredictionResponse(BaseModel):
 class ErrorResponse(BaseModel):
     execution_msg: Union[str, None]
     execution_code: Union[int, None]
-    result: Union[Dict[str, Union[str, int]], Dict[str, None]]
+    result: Union[Dict[str, Union[str, int]], Union[Dict[str, None], None]]
 
 
 # Load the model pipelines and encoder
