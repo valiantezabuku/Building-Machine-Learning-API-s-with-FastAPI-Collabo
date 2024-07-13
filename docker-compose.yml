@@ -12,7 +12,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-api
     command: uvicorn src.api.api:app --host 0.0.0.0 --port 9000 --reload
     volumes:
       - ./src:/src
@@ -25,6 +25,20 @@ services:
         required: false
     depends_on:
       - cache
+    networks:
+      app-tier:
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile-streamlit
+    command: streamlit run streamlit/predict.py
+    volumes:
+      - ./streamlit:/streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
     networks:
       app-tier:
 

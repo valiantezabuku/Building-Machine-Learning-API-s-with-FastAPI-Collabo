@@ -1,0 +1,23 @@
+FROM python:3.11.9-slim
+
+# Copy requirements file
+COPY requirements_docker_api.txt .
+
+# Update pip
+RUN pip --timeout=30000 install --no-cache-dir --upgrade pip
+
+# Install dependecies
+RUN pip --timeout=30000 install --no-cache-dir -r requirements_docker_api.txt
+
+# Copy API
+RUN mkdir /src/
+COPY ./src /src
+
+# Set workdir
+WORKDIR /
+
+# Expose app port
+EXPOSE 9000
+
+# Start application
+CMD ["uvicorn", "src.api.api:app", "--host", "0.0.0.0", "--port", "9000"]
