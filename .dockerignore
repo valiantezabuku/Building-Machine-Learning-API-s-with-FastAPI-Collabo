@@ -15,7 +15,7 @@ logs/*
 .env
 *.env
 .venv
-env/
+env2/
 venv/
 ENV/
 env.bak/
