@@ -1,5 +1,6 @@
 # Exclude files not needed for Docker build
 *__pycache__/
+**/*__pycache__/
 *.pyc
 *.pyo
 

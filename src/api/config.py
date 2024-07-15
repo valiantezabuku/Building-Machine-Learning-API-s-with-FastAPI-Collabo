@@ -12,4 +12,4 @@ ENCODER_URL = "https://raw.githubusercontent.com/valiantezabuku/Building-Machine
 
 BASE_DIR = './'  # Where Unicorn server runs from
 
-ENV_PATH = os.path.join(BASE_DIR, 'src/api/.env2')
+ENV_PATH = os.path.join(BASE_DIR, 'src/api/.env')

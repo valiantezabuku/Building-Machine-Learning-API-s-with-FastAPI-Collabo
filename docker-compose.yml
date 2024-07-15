@@ -20,7 +20,7 @@ services:
     ports:
       - "9000:9000"
     env_file:
-      - path: ./.env2
+      - path: ./src/api/.env
         required: false
       - path: ./.env
         required: false
