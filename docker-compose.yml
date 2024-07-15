@@ -16,11 +16,11 @@ services:
     image: gabcares/curium-fastapi:latest
     command: uvicorn src.api.api:app --host 0.0.0.0 --port 9000 --reload
     volumes:
-      - ./src:/src
+      - src:/src
     ports:
       - "9000:9000"
     env_file:
-      - path: ./.env2
+      - path: ./src/api/.env
         required: false
       - path: ./.env
         required: false
@@ -36,7 +36,7 @@ services:
     image: gabcares/curium-streamlit:latest
     command: streamlit run streamlit/predict.py
     volumes:
-      - ./streamlit:/streamlit
+      - streamlit:/streamlit
     ports:
       - "8501:8501"
     depends_on:
@@ -49,4 +49,6 @@ networks:
     driver: bridge
 
 volumes:
+  src:
+  streamlit:
   redis_data: {}

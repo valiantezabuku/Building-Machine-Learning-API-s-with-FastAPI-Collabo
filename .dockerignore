@@ -1,5 +1,6 @@
 # Exclude files not needed for Docker build
 *__pycache__/
+**/*__pycache__/
 *.pyc
 *.pyo
 
@@ -11,8 +12,9 @@ logs/*
 *.ipynb_checkpoints/
 
 # Environments
-.env2
-*.env2
+**/*.env
+.env
+*.env
 .venv
 env2/
 venv/
