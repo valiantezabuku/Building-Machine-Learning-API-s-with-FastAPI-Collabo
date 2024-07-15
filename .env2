@@ -1,0 +1,3 @@
+REDIS_URL=redis://redis-14458.c14.us-east-1-2.ec2.redns.redis-cloud.com:14458/
+REDIS_USERNAME=default
+REDIS_PASSWORD=lkiTwONUyGZdOlg216hwOAV3L82OJuRM

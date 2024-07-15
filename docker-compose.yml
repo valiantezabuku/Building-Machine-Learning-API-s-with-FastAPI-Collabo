@@ -13,13 +13,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-api
+    image: gabcares/curium-fastapi:latest
     command: uvicorn src.api.api:app --host 0.0.0.0 --port 9000 --reload
     volumes:
       - ./src:/src
     ports:
       - "9000:9000"
     env_file:
-      - path: ./src/api/.env
+      - path: ./.env2
         required: false
       - path: ./.env
         required: false
@@ -32,6 +33,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-streamlit
+    image: gabcares/curium-streamlit:latest
     command: streamlit run streamlit/predict.py
     volumes:
       - ./streamlit:/streamlit

@@ -11,10 +11,10 @@ logs/*
 *.ipynb_checkpoints/
 
 # Environments
-.env
-*.env
+.env2
+*.env2
 .venv
-env/
+env2/
 venv/
 ENV/
 env.bak/
