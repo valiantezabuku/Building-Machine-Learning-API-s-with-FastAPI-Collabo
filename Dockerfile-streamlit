@@ -20,4 +20,4 @@ WORKDIR /
 EXPOSE 8501
 
 # Start application
-CMD ["streamlit", "run", "streamlit/predict.py", "0.0.0.0", "--port", "8501"]
+CMD ["streamlit", "run", "streamlit/predict.py"]
