@@ -8,26 +8,21 @@ import datetime
 # Set page configuration
 st.set_page_config(page_title="Predict", page_icon="🔮",  layout="wide")
 
-
+# Set page title
 st.title("Predict Sepsis")
 
 
+# Function for selecting models
 def select_model():
     col1, col2 = st.columns(2)
     with col1:
         choice = st.selectbox('Select a model', options=['xgboost', 'random_forest'], key='select_model')
     with col2:
         pass
-
-    # if st.session_state['selected_model'] == 'Xgboost':
-    #     pipeline = xgboost_pipeline()
-    # else:
-    #     pipeline = load_random_forest_pipeline()
-
-    # encoder = joblib.load('models/encoder.joblib')
     return choice
 
 
+# Function for making prediction
 def make_prediction(): 
     selected_model = st.session_state['select_model']
     age = st.session_state['age']
@@ -45,6 +40,7 @@ def make_prediction():
 
 
     data = {'PRG': prg, 'PL': pl, 'PR': pr,'SK': sk, 'TS': ts, 'M11': m11, 'BD2': bd2, 'Age': age, 'Insurance': insurance}
+    
     # Send POST request with JSON data using the json parameter
     response_status = requests.get(base_url)
 
